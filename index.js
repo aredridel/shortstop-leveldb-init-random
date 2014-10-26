@@ -5,7 +5,6 @@ var crypto = require('crypto');
 module.exports = function dbForInitRandom(db) {
     return function leveldbInitRandom(input, cb) {
         db.get(input, function (err, value) {
-            console.log(err && err.code);
             if (value || err && err.type !== 'NotFoundError') {
                 return cb(err, value);
             } else {
