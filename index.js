@@ -4,9 +4,10 @@ var crypto = require('crypto');
 
 module.exports = function dbForInitRandom(db) {
     return function leveldbInitRandom(input, cb) {
-        db.get(input, errorsTo(cb, function (value) {
-            if (value) {
-                return cb(null, value);
+        db.get(input, function (err, value) {
+            console.log(err && err.code);
+            if (value || err && err.type !== 'NotFoundError') {
+                return cb(err, value);
             } else {
                 crypto.randomBytes(16, errorsTo(cb, function (value) {
                     db.put(input, value, errorsTo(cb, function () {
@@ -14,7 +15,7 @@ module.exports = function dbForInitRandom(db) {
                     }));
                 }));
             }
-        }));
+        });
 
         function errorsTo(errh, succh) {
             return function (err, data) {
