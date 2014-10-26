@@ -1,6 +1,6 @@
 {
   "name": "shortstop-leveldb-init-random",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A shortstop handler to initialize a random value once",
   "main": "index.js",
   "scripts": {
