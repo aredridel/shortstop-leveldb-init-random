@@ -1,0 +1,27 @@
+{
+  "name": "shortstop-leveldb-init-random",
+  "version": "1.0.0",
+  "description": "A shortstop handler to initialize a random value once",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape test/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aredridel/shortstop-leveldb-init-random.git"
+  },
+  "keywords": [
+    "shortstop",
+    "leveldb",
+    "krakenjs"
+  ],
+  "author": "Aria Stewart <aredridel@dinhe.net>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aredridel/shortstop-leveldb-init-random/issues"
+  },
+  "homepage": "https://github.com/aredridel/shortstop-leveldb-init-random",
+  "devDependencies": {
+    "tape": "^3.0.1"
+  }
+}
